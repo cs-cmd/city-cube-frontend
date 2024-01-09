@@ -5,8 +5,11 @@
 :root {
   --main-background: hsl(234, 6%, 17%);
   --header-font-color: hsl(196, 85%, 80%);
+  --header-font-dark: hsl(196, 85%, 50%);
+
   --header-accent-color: hsl(30, 85%, 80%); 
-  --text-font-color: hsl(234, 10%, 95%);  
+  --header-accent-dark: hsl(30, 85%, 50%);
+  --text-color: hsl(234, 10%, 95%);  
   
   --quick-time: .25s;
   --med-time: .5s;
@@ -19,6 +22,7 @@
 html {
   font-family: 'Kulim Park';
   background-color: var(--main-background);
+  color: var(--text-color);
 }
 
 .heading, .subheading {

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <header className="main-header">
-      <h1 className="header">CityCube</h1>
+      <h1 className="header">
+        <Link className='hidden-link' to='/'>CityCube</Link>
+      </h1>
       <nav>
         <ul>
           <li><Link to='/'>Home</Link></li>
@@ -14,7 +16,7 @@ export default function Header() {
             <Link to='/about'>About</Link>
           </li>
           <li>
-            <a href='#'>Contact</a>
+            <Link to='/contact'>Contact</Link>
           </li>
         </ul>
       </nav>

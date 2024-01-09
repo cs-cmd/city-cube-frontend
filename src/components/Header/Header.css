@@ -20,12 +20,16 @@
   a {
     text-decoration: none;
     color: var(--header-font-color);
-    transition: filter var(--quick-time);
-    &:hover {
-      filter: brightness(75%);
-    }
-    &:visited {
-      color: var(--header-accent-color);
+    /* Still want to use link capabilities, just not for
+       hidden links */
+    &:not(.hidden-link) {
+      transition: filter var(--quick-time);
+      &:hover {
+        filter: brightness(75%);
+      }
+      &:visited {
+        color: var(--header-accent-color);
+      }
     }
   }
 }
