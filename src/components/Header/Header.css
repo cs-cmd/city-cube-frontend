@@ -1,0 +1,31 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header {
+    color: var(--header-font-color);
+  }
+
+  ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    gap: 1rem;
+    color: var(--text-font-color);
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--header-font-color);
+    transition: filter var(--quick-time);
+    &:hover {
+      filter: brightness(75%);
+    }
+    &:visited {
+      color: var(--header-accent-color);
+    }
+  }
+}

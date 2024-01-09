@@ -1,0 +1,26 @@
+@import url('./assets/fonts/kulim-park-font.css');
+@import url('./assets/fonts/concert-one-font.css');
+
+/* Default branding of CityCube is 'dark' */
+:root {
+  --main-background: hsl(234, 6%, 17%);
+  --header-font-color: hsl(196, 85%, 80%);
+  --header-accent-color: hsl(30, 85%, 80%); 
+  --text-font-color: hsl(234, 10%, 95%);  
+  
+  --quick-time: .25s;
+  --med-time: .5s;
+  --slow-time: .75s;
+}
+/* Light mode can still apply if user requests */
+@media (prefers-color-scheme: light) {
+
+}
+html {
+  font-family: 'Kulim Park';
+  background-color: var(--main-background);
+}
+
+.heading, .subheading {
+  font-family: 'Concert One';
+}

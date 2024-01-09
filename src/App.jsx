@@ -1,9 +1,16 @@
+import { Outlet } from 'react-router-dom';
 import './App.css'
+import Header from './components/Header/Header.jsx';
+import SectionBreak from './components/SectionBreak/SectionBreak.jsx';
 
 function App() {
   return (
     <>
-      <p>Test</p>
+      <Header />
+
+      <SectionBreak />
+
+      <Outlet />
     </>
   )
 }
