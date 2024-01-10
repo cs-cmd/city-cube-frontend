@@ -1,0 +1,28 @@
+.photo-carousel {
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  padding: 25px;
+  & > img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* How to calculate the size of an element in css????? */
+@media screen and (max-width: 750px) {
+  .photo-carousel {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: clamp(250px, auto, 300px);
+    max-height: 300px;
+    padding: 0px;
+    img {
+      height: auto;
+    }
+  }
+}

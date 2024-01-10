@@ -2,9 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 25px;
 
-  .header {
+  .header-title {
     color: var(--header-font-color);
+    font-size: 2.5rem;
   }
 
   ul {
@@ -16,20 +18,25 @@
   }
   li {
     list-style: none;
+    display: flex;
+    align-items: center;
   }
-  a {
-    text-decoration: none;
-    color: var(--header-font-color);
-    /* Still want to use link capabilities, just not for
-       hidden links */
-    &:not(.hidden-link) {
-      transition: filter var(--quick-time);
-      &:hover {
-        filter: brightness(75%);
-      }
-      &:visited {
-        color: var(--header-accent-color);
-      }
+
+  .cart-link {
+    position: relative;
+    .item-counter {
+      color: var(--main-background);
+      background-color: var(--header-accent-color);
+      text-align: center;
+      min-height: 16px;
+      min-width: 16px;
+      border-radius: 100%;
+
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      padding: 1px;
     }
   }
+
 }

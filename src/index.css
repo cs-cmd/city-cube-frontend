@@ -25,6 +25,36 @@ html {
   color: var(--text-color);
 }
 
-.heading, .subheading {
-  font-family: 'Concert One';
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.subheading {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--header-font-color);
+  /* Still want to use link capabilities, just not for
+     hidden links */
+  &:not(.hidden-link) {
+    font-size: 1.25rem;
+    transition: filter var(--quick-time);
+    &:hover {
+      filter: brightness(75%);
+    }
+  }
+}
+
+.page-button-link { 
+  border: 1px solid var(--header-font-color);
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 50px;  
 }
