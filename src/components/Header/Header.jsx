@@ -4,10 +4,10 @@ import { useState } from 'react';
 import HeaderLinks from './HeaderLinks.jsx';
 
 export default function Header({itemsInCart = 0}) {
-  const [ isMenuHidden, setIsMenuHidden ] = useState(true);
+  const [ isMenuDisplayed, setIsMenuDisplayed ] = useState(false);
 
   function handleMenuButtonClick() {
-    setIsMenuHidden(!isMenuHidden);
+    setIsMenuDisplayed(!isMenuDisplayed);
   }
 
   return (
@@ -23,7 +23,7 @@ export default function Header({itemsInCart = 0}) {
       {/* Mobile menu, for screens less than or equal to 801px */}
       <div className='mobile-menu-container'>
         <button className='menu-button' onClick={handleMenuButtonClick}>Menu</button>
-        <nav onClick={handleMenuButtonClick} className={`mobile-menu${isMenuHidden ? ' hidden' : ''}`}>
+        <nav onClick={handleMenuButtonClick} className={`mobile-menu${isMenuDisplayed ? ' hidden' : ''}`}>
           <HeaderLinks />
         </nav>
       </div>

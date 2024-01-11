@@ -1,7 +1,23 @@
-import PhotoCarousel from '../../PhotoCarousel/PhotoCarousel';
+import ImageAndDesc from '../../ImageAndDesc/ImageAndDesc';
 import './HomePage.css';
-import { Link } from 'react-router-dom';
 
+const homePageImageContent = [
+  {
+    imgSrc: '/images/factory-images/factory2.jpg',
+    desc: 'Late-stage production of warehouse inventory',
+    text: 'Made from exotically-sourced nutrients from around the world, CityCube strives to nourish the City and neightboring boroughs.'
+  }, 
+  {
+    imgSrc: '/images/founders/founders1.jpeg',
+    desc: 'The founders, Raz Keenz and Mohammad Kapoor, in-front of their first factory',
+    text: 'Designed from the ground up by CS Financial\'s own son, Raz Keenz, alongside friend Mohammad Kapoor, built a culinary empire spanning the City.'
+  },
+  {
+    imgSrc: '/images/food-images/food1.jpg',
+    desc: 'A staple dish, the Orange Meringue Block',
+    text: 'Made efficiently from natural and artificial flavorings and nutrients sourced from around the world, CityCube\'s unit of food, the Block, is calorie-dense and stable, capable of filling a grown man in just two servings!'
+  }
+]
 
 export default function HomePage() {
   return (
@@ -14,12 +30,18 @@ export default function HomePage() {
           <p>A paragon of high-quality food and speedy delivery.</p>
             
           <h1>Never worry about the complexity of food again!</h1>
-          <Link to='/menu' className='page-button-link'>Order now!</Link>
+          
+          <a href='/menu' className='page-button-link hidden-link'>Order now!</a>
+          <div className='transparant-fade'/>
         </div>
       </section>
 
-      <section className='factory-carousel'>
-        <PhotoCarousel />
+      <section className='home-page-image-display'> 
+        {homePageImageContent.map((item, index) => 
+          <ImageAndDesc imgSrc={item.imgSrc} 
+            key={index} 
+            desc={item.desc}
+            text={item.text}/>)}
       </section>
     </main>
   )

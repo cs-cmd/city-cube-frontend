@@ -53,8 +53,19 @@ a {
 }
 
 .page-button-link { 
-  border: 1px solid var(--header-font-color);
+  border: 3px solid var(--header-font-color);
+  background-color: transparent;
   box-sizing: border-box;
-  padding: 15px;
   border-radius: 50px;  
+  padding: 15px;
+  letter-spacing: 5px;
+  font-size: 2rem;
+  transition: background var(--quick-time), 
+    border-color var(--quick-time), 
+    color var(--quick-time);
+  &:hover {
+    border-color: var(--header-font-dark);
+    color: var(--header-font-dark);
+    background-color: var(--header-font-color);
+  }
 }
