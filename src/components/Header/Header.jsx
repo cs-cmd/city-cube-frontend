@@ -25,11 +25,13 @@ export default function Header({ itemsInCart = 0 }) {
       {/* Mobile menu, for screens less than or equal to 801px */}
       <div className="mobile-menu-container">
         <button className="menu-button" onClick={handleMenuButtonClick}>
-          Menu
+          <span className="menu-bar"></span>
+          <span className="menu-bar"></span>
+          <span className="menu-bar"></span>
         </button>
         <nav
           onClick={handleMenuButtonClick}
-          className={`mobile-menu${isMenuDisplayed ? " hidden" : ""}`}
+          className={`mobile-menu${isMenuDisplayed ? " dropped" : ""}`}
         >
           <HeaderLinks />
         </nav>

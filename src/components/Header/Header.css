@@ -51,25 +51,51 @@
 
   .mobile-menu-container {
     display: block;
+    height: 100%;
+  }
+
+  .menu-button {
+    height: 75px;
+    width: 75px;
+    border: 2px solid var(--header-font-color);
+    background-color: hsla(0, 0%, 0%, 0);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .menu-bar {
+    display: block;
+    width: 50px;
+    background-color: var(--header-font-color);
+    height: 2px;
   }
 
   .mobile-menu {
     position: absolute;
     z-index: 1;
-    width: auto;
     backdrop-filter: blur(75px) brightness(75%);
-    top: 0;
+    height: fit-content;
+    top: 75px;
     left: 0;
+    right: 0;
+    transform: translateX(150%);
     border: 2px solid var(--header-font-color);
     box-sizing: border-box;
     padding: 25px;
     line-height: 2;
     margin: 25px;
+    transition: transform var(--quick-time);
 
-    .hidden {
-      display: none;
+    &.dropped {
+      transform: translateX(0%);
     }
-
     .links {
       display: flex;
       height: 50%;

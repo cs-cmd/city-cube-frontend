@@ -11,6 +11,8 @@
   --header-accent-dark: hsl(30, 85%, 50%);
   --text-color: hsl(234, 10%, 95%);
 
+  --border-radius: 25px;
+
   --quick-time: 0.25s;
   --med-time: 0.5s;
   --slow-time: 0.75s;
@@ -55,7 +57,7 @@ a {
   border: 3px solid var(--header-font-color);
   background-color: transparent;
   box-sizing: border-box;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   padding: 15px;
   letter-spacing: 5px;
   font-size: 2rem;
@@ -63,6 +65,7 @@ a {
     background var(--quick-time),
     border-color var(--quick-time),
     color var(--quick-time);
+
   &:hover {
     border-color: var(--header-font-dark);
     color: var(--header-font-dark);
