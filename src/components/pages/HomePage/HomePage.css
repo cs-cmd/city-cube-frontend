@@ -4,7 +4,7 @@
   flex-direction: column;
 
   .image-section {
-    background-image: url('../../../assets/images/storefront.jpeg');
+    background-image: url("/images/storefront.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -20,7 +20,11 @@
       }
 
       .transparant-fade {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0), var(--main-background));
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0),
+          var(--main-background)
+        );
         width: 100%;
         height: 50px;
       }

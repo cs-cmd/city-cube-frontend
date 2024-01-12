@@ -1,5 +1,5 @@
-@import url('./assets/fonts/kulim-park-font.css');
-@import url('./assets/fonts/concert-one-font.css');
+@import url("/fonts/kulim-park-font.css");
+@import url("/fonts/concert-one-font.css");
 
 /* Default branding of CityCube is 'dark' */
 :root {
@@ -7,20 +7,19 @@
   --header-font-color: hsl(196, 85%, 80%);
   --header-font-dark: hsl(196, 85%, 50%);
 
-  --header-accent-color: hsl(30, 85%, 80%); 
+  --header-accent-color: hsl(30, 85%, 80%);
   --header-accent-dark: hsl(30, 85%, 50%);
-  --text-color: hsl(234, 10%, 95%);  
-  
-  --quick-time: .25s;
-  --med-time: .5s;
-  --slow-time: .75s;
+  --text-color: hsl(234, 10%, 95%);
+
+  --quick-time: 0.25s;
+  --med-time: 0.5s;
+  --slow-time: 0.75s;
 }
 /* Light mode can still apply if user requests */
 @media (prefers-color-scheme: light) {
-
 }
 html {
-  font-family: 'Kulim Park';
+  font-family: "Kulim Park";
   background-color: var(--main-background);
   color: var(--text-color);
 }
@@ -52,16 +51,17 @@ a {
   }
 }
 
-.page-button-link { 
+.page-button-link {
   border: 3px solid var(--header-font-color);
   background-color: transparent;
   box-sizing: border-box;
-  border-radius: 50px;  
+  border-radius: 50px;
   padding: 15px;
   letter-spacing: 5px;
   font-size: 2rem;
-  transition: background var(--quick-time), 
-    border-color var(--quick-time), 
+  transition:
+    background var(--quick-time),
+    border-color var(--quick-time),
     color var(--quick-time);
   &:hover {
     border-color: var(--header-font-dark);
