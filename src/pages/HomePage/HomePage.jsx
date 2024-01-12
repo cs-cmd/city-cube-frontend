@@ -1,4 +1,4 @@
-import ImageAndDesc from "../../ImageAndDesc/ImageAndDesc";
+import ImageAndDesc from "@components/ImageAndDesc/ImageAndDesc";
 import "./HomePage.css";
 
 const homePageImageContent = [
