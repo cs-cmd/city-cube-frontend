@@ -13,7 +13,7 @@ export default function Header({ itemsInCart = 0 }) {
   return (
     <header className="main-header">
       <h1 className="header-title">
-        <Link className="hidden-link" to="/">
+        <Link to="/">
           CityCube
         </Link>
       </h1>
