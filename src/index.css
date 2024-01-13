@@ -5,10 +5,10 @@
 :root {
   --main-background: hsl(234, 6%, 17%);
   --header-font-color: hsl(196, 85%, 80%);
-  --header-font-dark: hsl(196, 85%, 50%);
+  --header-font-dark: hsl(196, 77%, 14%);
 
   --header-accent-color: hsl(30, 85%, 80%);
-  --header-accent-dark: hsl(30, 85%, 50%);
+  --header-accent-dark: hsl(30, 85%, 21%);
   --text-color: hsl(234, 10%, 95%);
 
   --border-radius: 25px;
@@ -42,14 +42,18 @@ body {
 a {
   text-decoration: none;
   color: var(--header-font-color);
-  /* Still want to use link capabilities, just not for
-     hidden links */
-  &:not(.hidden-link) {
-    font-size: 1.25rem;
-    transition: filter var(--quick-time);
+  border-bottom: 1px solid transparent;
+
+  &.header-link {
+    transition: filter var(--quick-time),
+    border-color var(--quick-time);
+
+    font-size: 1.5rem;
+    
     &:hover {
-      filter: brightness(75%);
-    }
+      border-bottom: 1px solid var(--header-font-color); 
+      filter: brightness(75%);  
+    } 
   }
 }
 
@@ -61,14 +65,8 @@ a {
   padding: 15px;
   letter-spacing: 5px;
   font-size: 2rem;
-  transition:
-    background var(--quick-time),
-    border-color var(--quick-time),
-    color var(--quick-time);
-
+  transition: background-color var(--quick-time);
   &:hover {
-    border-color: var(--header-font-dark);
-    color: var(--header-font-dark);
-    background-color: var(--header-font-color);
+    background-color: var(--header-font-dark);
   }
 }

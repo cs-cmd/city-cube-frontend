@@ -3,13 +3,13 @@ export default function HeaderLinks({itemsInCart = 0}) {
   return (
     <ul className='links'>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to='/' className="header-link">Home</Link>
       </li>
       <li>
-        <Link to='/menu'>Menu</Link>
+        <Link to='/menu' className='header-link'>Menu</Link>
       </li>
       <li>
-        <Link to='/account'>Account</Link>
+        <Link to='/account' className="header-link">Account</Link>
       </li>
       <li className='cart-link'>
         <Link to='/cart'>
