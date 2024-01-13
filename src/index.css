@@ -33,6 +33,9 @@ body {
 
 .heading {
   font-size: 2rem;
+  a.& {
+    
+  }
 }
 
 .subheading {
