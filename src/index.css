@@ -24,6 +24,7 @@ html {
   font-family: "Kulim Park";
   background-color: var(--main-background);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 body {
@@ -33,9 +34,6 @@ body {
 
 .heading {
   font-size: 2rem;
-  a.& {
-    
-  }
 }
 
 .subheading {
@@ -48,15 +46,10 @@ a {
   border-bottom: 1px solid transparent;
 
   &.header-link {
-    transition: filter var(--quick-time),
-    border-color var(--quick-time);
-
+    transition:
+      filter var(--quick-time),
+      border-color var(--quick-time);
     font-size: 1.5rem;
-    
-    &:hover {
-      border-bottom: 1px solid var(--header-font-color); 
-      filter: brightness(75%);  
-    } 
   }
 }
 

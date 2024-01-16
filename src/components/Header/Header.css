@@ -78,6 +78,7 @@
   }
 
   .mobile-menu {
+    overflow: hidden;
     position: absolute;
     z-index: 1;
     backdrop-filter: blur(75px) brightness(75%);
