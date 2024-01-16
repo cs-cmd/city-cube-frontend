@@ -3,7 +3,7 @@
 
 /* Default branding of CityCube is 'dark' */
 :root {
-  --main-background: hsl(234, 6%, 17%);
+  --main-background: hsl(240, 7%, 9%);
   --header-font-color: hsl(196, 85%, 80%);
   --header-font-dark: hsl(196, 77%, 14%);
 

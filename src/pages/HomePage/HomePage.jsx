@@ -1,7 +1,6 @@
 import ImageAndDesc from "@components/ImageAndDesc/ImageAndDesc";
 import "./HomePage.css";
-import homePageImageContent from "../../data/home-page-image-data";
-import ExpandingBorder from "@components/ExpandingBorder/ExpandingBorder";
+import homePageImageContent from "@data/home-page-image-data";
 
 export default function HomePage() {
   return (
