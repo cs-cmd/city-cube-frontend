@@ -1,0 +1,48 @@
+.counter {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > * {
+    flex: 1;
+  }
+}
+
+.counter-number {
+  text-align: center;
+}
+
+.counter-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--header-font-color);
+    filter: opacity(25%);
+    z-index: -1;
+  }
+
+  &:first-of-type {
+    &:after {
+      border-bottom-left-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
+    }
+  }
+
+  &:last-of-type {
+    &:after {
+      border-bottom-right-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+  }
+}

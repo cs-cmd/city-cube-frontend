@@ -14,7 +14,7 @@ export default function HomePage() {
 
           <h1>Never worry about the complexity of food again!</h1>
 
-          <a href="/menu" className="page-button-link hidden-link">
+          <a href="/menu" className="page-button call-to-action">
             Order now!
           </a>
           <div className="transparant-fade" />
