@@ -9,6 +9,9 @@
   border: 1px solid var(--header-font-color);
   border-radius: var(--border-radius);
 
+  .page-button {
+    height: 40px;
+  }
   &:after {
     content: "";
     position: absolute;

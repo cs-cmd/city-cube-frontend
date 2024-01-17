@@ -9,7 +9,7 @@
 .after-container {
   position: relative;
   flex: 1;
-  height: 30px;
+  height: 40px;
   width: 100%;
   &:after {
     content: "";

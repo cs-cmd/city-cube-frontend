@@ -40,6 +40,11 @@ body {
   font-size: 1.5rem;
 }
 
+.centered-text {
+  width: 100%;
+  text-align: center;
+}
+
 a {
   text-decoration: none;
   color: var(--header-font-color);

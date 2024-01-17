@@ -42,17 +42,21 @@ export default function MenuItem({
           <p>{price}</p>
         </div>
         <div className="item-cart-section">
-          <NumberInput
-            count={countToAdd}
-            changeNumberFunction={handleIncreaseCount}
-          />
-          <button
-            type="button"
-            className="page-button"
-            onClick={handleAddItemClick}
-          >
-            Add to cart
-          </button>
+          {(sold_out && <p className="centered-text">Sold out</p>) || (
+            <>
+              <NumberInput
+                count={countToAdd}
+                changeNumberFunction={handleIncreaseCount}
+              />
+              <button
+                type="button"
+                className="page-button"
+                onClick={handleAddItemClick}
+              >
+                Add to cart
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
