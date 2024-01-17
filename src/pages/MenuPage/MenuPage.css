@@ -1,6 +1,12 @@
 .menu-page {
 }
 
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .page-header {
   text-align: center;
 }

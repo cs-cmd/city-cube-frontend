@@ -12,7 +12,7 @@ export default function MenuPage() {
     <main className="menu-page">
       <h1 className="page-header">Our Menu</h1>
       <SectionBreak />
-      {menuItems}
+      <section className="menu-section">{menuItems}</section>
     </main>
   );
 }

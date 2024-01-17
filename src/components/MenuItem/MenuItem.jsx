@@ -15,7 +15,7 @@ export default function MenuItem({
       return;
     }
 
-    setCountToAdd(countToAdd + amt);
+    setCountToAdd(amt);
   }
 
   return (
