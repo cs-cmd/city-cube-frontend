@@ -11,6 +11,7 @@ export default function MenuItem({
 }) {
   const [countToAdd, setCountToAdd] = useState(0);
   const itemAddHandler = useHandler("onItemAdd");
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   function handleIncreaseCount(amt) {
     if (countToAdd <= 0 && amt < 0) {
@@ -31,9 +32,10 @@ export default function MenuItem({
     >
       <div className="item-image-container">
         <img
-          className="item-image"
+          className={`item-image${isImageLoading ? " loading" : ""}`}
+          onLoad={() => setIsImageLoading(false)}
           src="https://picsum.photos/400/400"
-          alt="item"
+          alt="Menu Item Image"
         />
       </div>
       <div className="item-details">

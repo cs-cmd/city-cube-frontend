@@ -1,5 +1,6 @@
 .menu-item {
   --sold-out-color: hsl(0, 77%, 42%);
+
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -45,9 +46,29 @@
   justify-content: center;
 }
 .item-image {
-  width: 100%;
+  width: 300px;
+  height: 300px;
   object-fit: contain;
   border-radius: var(--border-radius);
+  &.loading {
+    opacity: 0.5;
+    background-color: var(--header-font-color);
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  font-size: 0px;
+}
+
+@keyframes loading {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(3px);
+  }
 }
 
 .item-details {
