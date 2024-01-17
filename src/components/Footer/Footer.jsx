@@ -7,10 +7,22 @@ export default function Footer() {
       <SectionBreak />
       <p>
         This webpage was made as a project following{" "}
-        <a href="https://www.theodinproject.com">The Odin Project</a>&apos;s
-        curriculum.
+        <a
+          href="https://www.theodinproject.com"
+          target="_blank"
+          rel="noreferrer"
+          className="reactive-link"
+        >
+          The Odin Project
+        </a>
+        &apos;s curriculum.
       </p>
-      <a href="https://github.com/cs-cmd/city-cube-v2">
+      <a
+        href="https://github.com/cs-cmd/city-cube-v2"
+        target="_blank"
+        rel="noreferrer"
+        className="reactive-link"
+      >
         <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
           <path
             className="svg-path"

@@ -51,6 +51,12 @@ a {
       border-color var(--quick-time);
     font-size: 1.5rem;
   }
+  &.reactive-link {
+    transition: filter var(--quick-time);
+    &:hover {
+      filter: brightness(0.75);
+    }
+  }
 }
 
 .page-button {
