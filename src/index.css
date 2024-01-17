@@ -16,6 +16,8 @@
   --quick-time: 0.25s;
   --med-time: 0.5s;
   --slow-time: 0.75s;
+
+  scrollbar-color: var(--header-font-color) var(--main-background);
 }
 /* Light mode can still apply if user requests */
 @media (prefers-color-scheme: light) {
