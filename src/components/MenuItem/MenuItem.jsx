@@ -41,7 +41,7 @@ export default function MenuItem({
       <div className="item-details">
         <div className="name-and-price">
           <h2>{name}</h2>
-          <p>{price}</p>
+          <p>${price}</p>
         </div>
         <div className="item-cart-section">
           {(sold_out && <p className="centered-text">Sold out</p>) || (
