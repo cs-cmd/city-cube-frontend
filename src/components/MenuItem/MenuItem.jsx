@@ -29,26 +29,6 @@ export default function MenuItem({
     <div
       className={`menu-item${hot_item ? " hot-item" : ""}${sold_out ? " sold-out" : ""}`}
     >
-      <div className="item-details">
-        <h2>{name}</h2>
-        <p>${price}</p>
-        <p>{sold_out ? "Sold out" : ""}</p>
-        {!sold_out && (
-          <div className="item-cart-section">
-            <NumberInput
-              count={countToAdd}
-              changeNumberFunction={handleIncreaseCount}
-            />
-            <button
-              type="button"
-              className="page-button"
-              onClick={handleAddItemClick}
-            >
-              Add to cart
-            </button>
-          </div>
-        )}
-      </div>
       <div className="item-image-container">
         <img
           className="item-image"
@@ -56,6 +36,53 @@ export default function MenuItem({
           alt="item"
         />
       </div>
+      <div className="item-details">
+        <div className="name-and-price">
+          <h2>{name}</h2>
+          <p>{price}</p>
+        </div>
+        <div className="item-cart-section">
+          <NumberInput
+            count={countToAdd}
+            changeNumberFunction={handleIncreaseCount}
+          />
+          <button
+            type="button"
+            className="page-button"
+            onClick={handleAddItemClick}
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
     </div>
   );
+  //   {/* <div className="item-details">
+  //     <h2>{name}</h2>
+  //     <p>${price}</p>
+  //     <p>{sold_out ? "Sold out" : ""}</p>
+  //     {!sold_out && (
+  //       <div className="item-cart-section">
+  //         <NumberInput
+  //           count={countToAdd}
+  //           changeNumberFunction={handleIncreaseCount}
+  //         />
+  //         <button
+  //           type="button"
+  //           className="page-button"
+  //           onClick={handleAddItemClick}
+  //         >
+  //           Add to cart
+  //         </button>
+  //       </div>
+  //     )}
+  //   </div>
+  //   <div className="item-image-container">
+  //     <img
+  //       className="item-image"
+  //       src="https://picsum.photos/400/400"
+  //       alt="item"
+  //     />
+  //   </div>
+  // </div> */}
 }
