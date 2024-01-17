@@ -2,13 +2,13 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import Header from "@components/Header/Header.jsx";
 import SectionBreak from "@components/SectionBreak/SectionBreak.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "@components/Footer/Footer";
 import { setHandler } from "@hooks/useHandler";
-import { setValue } from "@hooks/useValue";
 
 function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
+
   function handleItemAdd(newItem, amount) {
     const newObject = {
       ...newItem,
@@ -22,10 +22,6 @@ function App() {
   }
 
   setHandler("onItemAdd", handleItemAdd);
-
-  useEffect(() => {
-    setValue("itemsInCart", itemsInCart);
-  }, [itemsInCart]);
 
   return (
     <>
