@@ -13,13 +13,11 @@ export default function Header({ itemsInCart = 0 }) {
   return (
     <header className="main-header">
       <h1 className="header-title">
-        <Link to="/">
-          CityCube
-        </Link>
+        <Link to="/">CityCube</Link>
       </h1>
       {/* Desktop menu, used for screens wider than 801px */}
       <nav className="desktop-menu">
-        <HeaderLinks />
+        <HeaderLinks itemsInCart={itemsInCart} />
       </nav>
 
       {/* Mobile menu, for screens less than or equal to 801px */}
@@ -33,7 +31,7 @@ export default function Header({ itemsInCart = 0 }) {
           onClick={handleMenuButtonClick}
           className={`mobile-menu${isMenuDisplayed ? " dropped" : ""}`}
         >
-          <HeaderLinks />
+          <HeaderLinks itemsInCart={itemsInCart} />
         </nav>
       </div>
     </header>
