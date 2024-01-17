@@ -1,6 +1,7 @@
 import ImageAndDesc from "@components/ImageAndDesc/ImageAndDesc";
 import "./HomePage.css";
 import homePageImageContent from "@data/home-page-image-data";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -14,9 +15,9 @@ export default function HomePage() {
 
           <h1>Never worry about the complexity of food again!</h1>
 
-          <a href="/menu" className="page-button call-to-action">
+          <Link to="/menu" className="page-button call-to-action">
             Order now!
-          </a>
+          </Link>
           <div className="transparant-fade" />
         </div>
       </section>
