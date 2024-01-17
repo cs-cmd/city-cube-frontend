@@ -1,6 +1,7 @@
 import "./MenuItem.css";
 import { useState } from "react";
 import NumberInput from "@components/NumberInput/NumberInput";
+import { useHandler } from "@hooks/useHandler";
 
 export default function MenuItem({
   name,
@@ -9,6 +10,7 @@ export default function MenuItem({
   sold_out = false,
 }) {
   const [countToAdd, setCountToAdd] = useState(0);
+  const itemAddHandler = useHandler("onItemAdd");
 
   function handleIncreaseCount(amt) {
     if (countToAdd <= 0 && amt < 0) {
@@ -16,6 +18,11 @@ export default function MenuItem({
     }
 
     setCountToAdd(amt);
+  }
+
+  function handleAddItemClick() {
+    itemAddHandler({ name, price }, countToAdd);
+    setCountToAdd(0);
   }
 
   return (
@@ -32,7 +39,11 @@ export default function MenuItem({
               count={countToAdd}
               changeNumberFunction={handleIncreaseCount}
             />
-            <button type="button" className="page-button">
+            <button
+              type="button"
+              className="page-button"
+              onClick={handleAddItemClick}
+            >
               Add to cart
             </button>
           </div>

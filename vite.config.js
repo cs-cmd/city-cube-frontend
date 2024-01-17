@@ -26,6 +26,10 @@ export default defineConfig({
         find: "@data",
         replacement: fileURLToPath(new URL("./src/data", import.meta.url)),
       },
+      {
+        find: "@hooks",
+        replacement: fileURLToPath(new URL("./src/hooks", import.meta.url)),
+      },
     ],
   },
 
