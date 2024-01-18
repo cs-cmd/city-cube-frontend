@@ -1,6 +1,6 @@
 // display items in cart here
 import { useValue } from "@hooks/useValue";
-import MenuItem from "@components/MenuItem/MenuItem";
+import CartItem from "@components/CartItem/CartItem";
 
 export default function CartPage() {
   const itemsInCart = useValue("itemsInCart");
@@ -15,9 +15,7 @@ export default function CartPage() {
         <p className="centered-text">No items are currently in your cart.</p>
       )) ||
         itemsInCart.map((item) => {
-          return (
-            <MenuItem key={item.name} {...item} itemAddHandler={editCartItem} />
-          );
+          return <CartItem key={item.name} item={item} />;
         })}
     </main>
   );
