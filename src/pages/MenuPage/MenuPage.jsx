@@ -3,9 +3,11 @@ import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
 import { useEffect, useState } from "react";
+import { useHandler } from "@hooks/useHandler";
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);
+  const itemAddHandler = useHandler("onItemAdd");
 
   // Get items from menuObjects
   useEffect(() => {
@@ -14,7 +16,7 @@ export default function MenuPage() {
       const menuQueryResults = menuObjects;
 
       const preMenuItems = menuQueryResults.map((menuObject, index) => (
-        <MenuItem key={index} {...menuObject} />
+        <MenuItem key={index} {...menuObject} itemAddHandler={itemAddHandler} />
       ));
 
       setMenuItems(preMenuItems);

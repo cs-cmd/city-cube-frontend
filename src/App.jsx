@@ -5,7 +5,7 @@ import SectionBreak from "@components/SectionBreak/SectionBreak.jsx";
 import { useState, useEffect } from "react";
 import Footer from "@components/Footer/Footer";
 import { setHandler } from "@hooks/useHandler";
-import { setValue } from "@hooks/useValue";
+import { useValue } from "@hooks/useValue";
 
 function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
@@ -23,7 +23,7 @@ function App() {
   }
 
   useEffect(() => {
-    setValue("itemsInCart", itemsInCart);
+    useValue("itemsInCart", itemsInCart);
     return () => {
       null;
     };
