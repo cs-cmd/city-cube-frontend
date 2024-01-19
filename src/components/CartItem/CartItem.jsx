@@ -1,9 +1,13 @@
 import "./CartItem.css";
+import { CartItemsContext } from "@context/CartItemsContext";
+import { useContext } from "react";
 
 export default function CartItem({ item, onItemChange }) {
+  const { removeItem } = useContext(CartItemsContext);
+
   function handleButtonClick(amount) {
     if (item.amount + amount <= 0) {
-      // delete item from list
+      removeItem(item);
       return;
     }
 
@@ -33,7 +37,12 @@ export default function CartItem({ item, onItemChange }) {
           +
         </button>
       </div>
-      <button className="page-button secondary" onClick={() => {}}>
+      <button
+        className="page-button secondary"
+        onClick={() => {
+          removeItem(item);
+        }}
+      >
         Remove
       </button>
     </div>

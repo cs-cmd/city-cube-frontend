@@ -2,32 +2,22 @@ import menuObjects from "@data/menuObjects.js";
 import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { CartItemsContext } from "@context/CartItemsContext";
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);
   const { onItemChange } = useContext(CartItemsContext);
 
-  // Get items from menuObjects
-  useEffect(() => {
-    async function getItems() {
-      // const menuItems = await menuObjects;
-      // add filter option for flavors, price, etc.
-
-      const menuQueryResults = menuObjects;
-
-      const preMenuItems = menuQueryResults.map((menuObject, index) => (
-        <MenuItem key={index} {...menuObject} onItemAdd={onItemChange} />
-      ));
-
-      setMenuItems(preMenuItems);
-    }
-
-    if (menuItems === null) {
-      getItems();
-    }
-  });
+  // const menuItems = await menuObjectsts;
+  // add filter option for flavors, price, etc.
+  const menuQueryResults = menuObjects;
+  const newMenuItems = menuQueryResults.map((menuObject, index) => (
+    <MenuItem key={index} {...menuObject} onItemAdd={onItemChange} />
+  ));
+  if (menuItems === null) {
+    setMenuItems(newMenuItems);
+  }
 
   return (
     <main className="menu-page">
