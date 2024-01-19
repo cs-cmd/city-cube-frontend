@@ -8,7 +8,7 @@ export default function CartCheckout({ totals }) {
         <p>Total Items: {totals.totalItems}</p>
         <p>Total Price &#40;pre-tax&#41;: ${totals.totalPrice}</p>
       </div>
-      <button className="page-button">Order</button>
+      <button className="page-button call-to-action">Order</button>
     </div>
   );
 }
