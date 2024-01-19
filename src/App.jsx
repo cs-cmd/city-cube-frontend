@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import Header from "@components/Header/Header.jsx";
 import SectionBreak from "@components/SectionBreak/SectionBreak.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "@components/Footer/Footer";
-import { setHandler } from "@hooks/useHandler";
+import { useHandler } from "@hooks/useHandler";
 import { useValue } from "@hooks/useValue";
 
 function App() {
@@ -22,14 +22,20 @@ function App() {
     setItemsInCart(newItemsInCart);
   }
 
-  useEffect(() => {
-    useValue("itemsInCart", itemsInCart);
-    return () => {
-      null;
-    };
-  }, [itemsInCart]);
+  function onItemEdit(newItem) {
+    const newItems = itemsInCart.map((item) => {
+      if (item.name === newItem.name) {
+        return newItem;
+      }
+      return item;
+    });
 
-  setHandler("onItemAdd", handleItemAdd);
+    setItemsInCart(newItems);
+  }
+
+  useValue("itemsInCart", itemsInCart);
+  useHandler("onItemEdit", onItemEdit);
+  useHandler("onItemAdd", handleItemAdd);
 
   return (
     <>

@@ -1,16 +1,17 @@
 import "./MenuItem.css";
 import { useState } from "react";
 import NumberInput from "@components/NumberInput/NumberInput";
+import { useHandler } from "@hooks/useHandler";
 
 export default function MenuItem({
   name,
   price,
   hot_item = false,
   sold_out = false,
-  itemAddHandler,
 }) {
   const [countToAdd, setCountToAdd] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(true);
+  const onItemAdd = useHandler("onItemAdd");
 
   function handleIncreaseCount(amt) {
     if (countToAdd <= 0 && amt < 0) {
@@ -21,7 +22,7 @@ export default function MenuItem({
   }
 
   function handleAddItemClick() {
-    itemAddHandler({ name, price }, countToAdd);
+    onItemAdd({ name, price }, countToAdd);
     setCountToAdd(0);
   }
 

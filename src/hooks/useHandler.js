@@ -1,9 +1,9 @@
 const handlers = {};
 
-function setHandler(key, handler) {
-  handlers[key] = handler;
+function useHandler(key, handler) {
+  if (handlers[key] === undefined) {
+    handlers[key] = handler;
+  }
+  return handlers[key];
 }
-
-const useHandler = (key) => handlers[key];
-
-export { setHandler, useHandler };
+export { useHandler };

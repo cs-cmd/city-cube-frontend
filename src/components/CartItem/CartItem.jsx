@@ -1,25 +1,22 @@
 import "./CartItem.css";
-import { useValue } from "@hooks/useValue";
+import { useState, useEffect } from "react";
 
-export default function CartItem() {
-  const cartItems = useValue("itemsInCart");
+export default function CartItem({ item, editCartItem }) {
+  function handleButtonClick(changeVal) {
+    const newAmount = item.amount + changeVal;
+    const newItem = {
+      ...item,
+      newAmount,
+    };
 
-  const cartPageItems = cartItems.map((item) => {
-    return (
-      <div className="cart-item" key={item.name}>
-        <h2>{item.name}</h2>
-        <p>${item.price}</p>
-      </div>
-    );
-  });
-
+    editCartItem(newItem);
+  }
   return (
     <div className="cart-items">
-      {cartItems.map((item) => (
-        <div key={item.id} className="cart-item">
-          {cartPageItems}
-        </div>
-      ))}
+      <h2>{item.name}</h2>
+      {/* <img src={imgSrc} alt={item.name} /> */}
+      <p>${item.price}</p>
+      <p>Quantity: {item.amount}</p>
     </div>
   );
 }
