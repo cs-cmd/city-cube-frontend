@@ -1,12 +1,12 @@
 import "./CartItem.css";
 
-export default function CartItem({ item, onItemEdit }) {
-  function handleButtonClick(changeVal) {
+export default function CartItem({ item, onItemChange }) {
+  function handleButtonClick(amount) {
     const newItem = {
       ...item,
-      amount: item.amount + changeVal,
+      amount,
     };
-    onItemEdit(newItem);
+    onItemChange(newItem);
   }
 
   return (
@@ -15,6 +15,7 @@ export default function CartItem({ item, onItemEdit }) {
       {/* <img src={imgSrc} alt={item.name} /> */}
       <p>${item.price}</p>
       <p>Quantity: {item.amount}</p>
+      <button onClick={() => handleButtonClick(-1)}>Decrease</button>
       <button onClick={() => handleButtonClick(1)}>Increase</button>
     </div>
   );

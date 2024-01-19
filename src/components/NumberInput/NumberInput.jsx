@@ -10,6 +10,7 @@ export default function NumberInput({ count, changeNumberFunction }) {
 
     changeNumberFunction(valueAsNumber);
   }
+
   return (
     <div className="counter">
       <button

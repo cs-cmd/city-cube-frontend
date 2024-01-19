@@ -14,8 +14,6 @@ export default function Header() {
     setIsMenuDisplayed(!isMenuDisplayed);
   }
 
-  console.log(itemsInCart);
-
   return (
     <header className="main-header">
       <h1 className="header-title">
