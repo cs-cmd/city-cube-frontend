@@ -1,19 +1,22 @@
 import "./MenuItem.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import NumberInput from "@components/NumberInput/NumberInput";
+import CartItemsContext from '@context/CartItemsContext/CartItemsContext';
+
 
 export default function MenuItem({
   name,
   price,
   hot_item = false,
   sold_out = false,
-  onItemAdd,
 }) {
   const [amount, setAmount] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(true);
+  const {onItemChange} = useContext(CartItemsContext)
 
   function handleIncreaseCount(amt) {
-    if (amount <= 0 && amt < 0) {
+    if (amount <= 0 && amt < 0 ||
+      amt == 0) {
       return;
     }
 
@@ -21,7 +24,7 @@ export default function MenuItem({
   }
 
   function handleAddItemClick() {
-    onItemAdd({ name, price, amount });
+    onItemChange({ name, price, amount });
     setAmount(0);
   }
 

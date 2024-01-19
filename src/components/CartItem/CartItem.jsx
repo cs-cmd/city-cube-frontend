@@ -1,5 +1,5 @@
 import "./CartItem.css";
-import { CartItemsContext } from "@context/CartItemsContext";
+import CartItemsContext from "@context/CartItemsContext/CartItemsContext";
 import { useContext } from "react";
 
 export default function CartItem({ item, onItemChange }) {

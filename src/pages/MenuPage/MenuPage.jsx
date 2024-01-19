@@ -2,18 +2,16 @@ import menuObjects from "@data/menuObjects.js";
 import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
-import { useState, useContext } from "react";
-import { CartItemsContext } from "@context/CartItemsContext";
+import { useState, } from "react";
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);
-  const { onItemChange } = useContext(CartItemsContext);
 
   // const menuItems = await menuObjectsts;
   // add filter option for flavors, price, etc.
   const menuQueryResults = menuObjects;
   const newMenuItems = menuQueryResults.map((menuObject, index) => (
-    <MenuItem key={index} {...menuObject} onItemAdd={onItemChange} />
+    <MenuItem key={index} {...menuObject} />
   ));
   if (menuItems === null) {
     setMenuItems(newMenuItems);

@@ -1,6 +1,6 @@
 // display items in cart here
 import CartItem from "@components/CartItem/CartItem";
-import { CartItemsContext } from "@context/CartItemsContext";
+import CartItemsContext from "@context/CartItemsContext/CartItemsContext";
 import { useContext, useState, useEffect } from "react";
 import "./CartPage.css";
 import CartCheckout from "@components/CartCheckout/CartCheckout";
@@ -43,18 +43,20 @@ export default function CartPage() {
 
   return (
     <main className="cart-page">
-      <section className="cart-section">
-        <h1 className="centered-text">Cart</h1>
-        <div className="cart-items-div">
-          {(itemsInCartPageItems.length === 0 && (
-            <p className="centered-text">
-              No items are currently in your cart.
-            </p>
-          )) ||
-            itemsInCartPageItems}
-        </div>
-      </section>
-      <CartCheckout totals={totals} />
+      <div className="cart-page-container">
+        <section className="cart-section">
+          <h1 className="centered-text">Cart</h1>
+          <div className="cart-items-div">
+            {(itemsInCartPageItems.length === 0 && (
+              <p className="centered-text">
+                No items are currently in your cart.
+              </p>
+            )) ||
+              itemsInCartPageItems}
+          </div>
+        </section>
+        <CartCheckout totals={totals} />
+      </div>
     </main>
   );
 }
