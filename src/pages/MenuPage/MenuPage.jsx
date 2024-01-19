@@ -2,12 +2,12 @@ import menuObjects from "@data/menuObjects.js";
 import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
-import { useEffect, useState } from "react";
-import { useHandler } from "@hooks/useHandler";
+import { useEffect, useState, useContext } from "react";
+import { CartItemsContext } from "@context/CartItemsContext";
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);
-  const itemAddHandler = useHandler("onItemAdd");
+  const { onItemChange } = useContext(CartItemsContext);
 
   // Get items from menuObjects
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function MenuPage() {
       const menuQueryResults = menuObjects;
 
       const preMenuItems = menuQueryResults.map((menuObject, index) => (
-        <MenuItem key={index} {...menuObject} itemAddHandler={itemAddHandler} />
+        <MenuItem key={index} {...menuObject} onItemAdd={onItemChange} />
       ));
 
       setMenuItems(preMenuItems);

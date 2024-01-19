@@ -1,29 +1,28 @@
 import "./MenuItem.css";
 import { useState } from "react";
 import NumberInput from "@components/NumberInput/NumberInput";
-import { useHandler } from "@hooks/useHandler";
 
 export default function MenuItem({
   name,
   price,
   hot_item = false,
   sold_out = false,
+  onItemAdd,
 }) {
-  const [countToAdd, setCountToAdd] = useState(0);
+  const [amount, setAmount] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(true);
-  const onItemAdd = useHandler("onItemAdd");
 
   function handleIncreaseCount(amt) {
-    if (countToAdd <= 0 && amt < 0) {
+    if (amount <= 0 && amt < 0) {
       return;
     }
 
-    setCountToAdd(amt);
+    setAmount(amt);
   }
 
   function handleAddItemClick() {
-    onItemAdd({ name, price }, countToAdd);
-    setCountToAdd(0);
+    onItemAdd({ name, price, amount });
+    setAmount(0);
   }
 
   return (
@@ -47,7 +46,7 @@ export default function MenuItem({
           {(sold_out && <p className="centered-text">Sold out</p>) || (
             <>
               <NumberInput
-                count={countToAdd}
+                count={amount}
                 changeNumberFunction={handleIncreaseCount}
               />
               <button
@@ -63,32 +62,4 @@ export default function MenuItem({
       </div>
     </div>
   );
-  //   {/* <div className="item-details">
-  //     <h2>{name}</h2>
-  //     <p>${price}</p>
-  //     <p>{sold_out ? "Sold out" : ""}</p>
-  //     {!sold_out && (
-  //       <div className="item-cart-section">
-  //         <NumberInput
-  //           count={countToAdd}
-  //           changeNumberFunction={handleIncreaseCount}
-  //         />
-  //         <button
-  //           type="button"
-  //           className="page-button"
-  //           onClick={handleAddItemClick}
-  //         >
-  //           Add to cart
-  //         </button>
-  //       </div>
-  //     )}
-  //   </div>
-  //   <div className="item-image-container">
-  //     <img
-  //       className="item-image"
-  //       src="https://picsum.photos/400/400"
-  //       alt="item"
-  //     />
-  //   </div>
-  // </div> */}
 }

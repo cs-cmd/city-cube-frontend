@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ExpandingBorder from "@components/ExpandingBorder/ExpandingBorder";
 
-export default function HeaderLinks({ itemsInCart = 0 }) {
+export default function HeaderLinks({ numItemsInCart }) {
   return (
     <ul className="links">
       <li>
@@ -39,9 +39,9 @@ export default function HeaderLinks({ itemsInCart = 0 }) {
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
-          {itemsInCart > 0 && (
+          {numItemsInCart > 0 && (
             <span className="item-counter">
-              {itemsInCart >= 10 ? "9+" : itemsInCart}
+              {numItemsInCart >= 10 ? "9+" : numItemsInCart}
             </span>
           )}
         </Link>

@@ -1,14 +1,12 @@
 import "./CartItem.css";
 
-export default function CartItem({ item, editCartItem }) {
+export default function CartItem({ item, onItemEdit }) {
   function handleButtonClick(changeVal) {
-    const newAmount = item.amount + changeVal;
     const newItem = {
       ...item,
-      newAmount,
+      amount: item.amount + changeVal,
     };
-
-    editCartItem(newItem);
+    onItemEdit(newItem);
   }
 
   return (
