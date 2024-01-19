@@ -78,6 +78,11 @@ a {
     cursor: pointer;
   }
 
+  &.secondary {
+    color: var(--header-accent-color);
+    border-color: var(--header-accent-color);
+  }
+
   &.regular {
     margin: 0px;
   }
@@ -92,4 +97,8 @@ a {
       background-color: var(--header-font-dark);
     }
   }
+}
+
+.subscript {
+  font-size: 0.75em;
 }

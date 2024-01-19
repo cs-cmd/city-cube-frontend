@@ -13,6 +13,8 @@ export default function MenuPage() {
   useEffect(() => {
     async function getItems() {
       // const menuItems = await menuObjects;
+      // add filter option for flavors, price, etc.
+
       const menuQueryResults = menuObjects;
 
       const preMenuItems = menuQueryResults.map((menuObject, index) => (

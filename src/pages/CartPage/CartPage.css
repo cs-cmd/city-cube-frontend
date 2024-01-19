@@ -1,0 +1,12 @@
+.cart-page {
+  display: flex;
+  padding: 15px;
+  max-width: 1000px;
+  gap: 15px;
+  & > .cart-section {
+    width: 75%;
+  }
+  & > .checkout-section {
+    width: 25%;
+  }
+}

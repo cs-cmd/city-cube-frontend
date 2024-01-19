@@ -2,6 +2,11 @@ import "./CartItem.css";
 
 export default function CartItem({ item, onItemChange }) {
   function handleButtonClick(amount) {
+    if (item.amount + amount <= 0) {
+      // delete item from list
+      return;
+    }
+
     const newItem = {
       ...item,
       amount,
@@ -10,13 +15,27 @@ export default function CartItem({ item, onItemChange }) {
   }
 
   return (
-    <div className="cart-items">
+    <div className="cart-item">
       <h2>{item.name}</h2>
-      {/* <img src={imgSrc} alt={item.name} /> */}
-      <p>${item.price}</p>
-      <p>Quantity: {item.amount}</p>
-      <button onClick={() => handleButtonClick(-1)}>Decrease</button>
-      <button onClick={() => handleButtonClick(1)}>Increase</button>
+      <div className="total-item-price-line">
+        <p>
+          ${item.price}&nbsp;
+          <span className="subscript">x {item.amount}</span>
+        </p>
+
+        <h3>${item.price * item.amount}</h3>
+      </div>
+      <div className="adjust-amount-buttons">
+        <button onClick={() => handleButtonClick(-1)} className="page-button">
+          -
+        </button>
+        <button onClick={() => handleButtonClick(1)} className="page-button">
+          +
+        </button>
+      </div>
+      <button className="page-button secondary" onClick={() => {}}>
+        Remove
+      </button>
     </div>
   );
 }
