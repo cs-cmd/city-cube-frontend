@@ -7,17 +7,6 @@ export default function CartPage() {
   const itemsInCart = useValue("itemsInCart");
   const onItemEdit = useHandler("onItemEdit");
 
-  function editCartItem(newItem) {
-    const newItems = itemsInCart.map((item) => {
-      if (item.name === newItem.name) {
-        return newItem;
-      }
-      return item;
-    });
-
-    onItemEdit(newItems);
-  }
-
   return (
     <main>
       <h1 className="centered-text">Cart</h1>
@@ -27,7 +16,7 @@ export default function CartPage() {
       )) ||
         itemsInCart.map((item) => {
           return (
-            <CartItem key={item.name} item={item} editCartItem={editCartItem} />
+            <CartItem key={item.name} item={item} editCartItem={onItemEdit} />
           );
         })}
     </main>

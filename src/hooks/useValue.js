@@ -1,11 +1,11 @@
 const values = {};
 
-function useValue(key, defaultValue) {
-  if (defaultValue !== undefined) {
-    values[key] = defaultValue;
-  }
-
+function useValue(key) {
   return values[key];
 }
 
-export { useValue };
+function setValue(key, value) {
+  values[key] = value;
+}
+
+export { useValue, setValue };
