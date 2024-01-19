@@ -2,7 +2,7 @@ import menuObjects from "@data/menuObjects.js";
 import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
-import { useState, } from "react";
+import { useState } from "react";
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);

@@ -11,16 +11,9 @@ export default function CartItemsProvider({ children }) {
   }, [itemsInCart]);
 
   const onItemChange = useCallback((newItem) => {
-
-    // todo: incorrect adding from cart, needs to be fixed
-    console.log(`newItem: ${JSON.stringify(newItem)}`);
-    console.log(`itemsInCart: ${JSON.stringify(itemsInCart)}`);
-
     const newItemsInCart = {
       ...itemsInCart,
     };
-
-    console.log(`newItemsInCart: ${JSON.stringify(newItemsInCart)}`);
 
     if (itemsInCart[newItem.name] === undefined) {
       newItemsInCart[newItem.name] = newItem;
@@ -30,7 +23,6 @@ export default function CartItemsProvider({ children }) {
       newItemsInCart[newItem.name] = newItemToAdd;
     }
 
-    console.log(`newItemsInCart post-add: ${JSON.stringify(newItemsInCart)}`);
     setItemsInCart(newItemsInCart);
   }, [itemsInCart, setItemsInCart]);
 
