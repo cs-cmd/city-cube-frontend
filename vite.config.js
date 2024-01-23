@@ -34,6 +34,14 @@ export default defineConfig({
         find: "@context",
         replacement: fileURLToPath(new URL("./src/context", import.meta.url)),
       },
+      {
+        find: "@stores",
+        replacement: fileURLToPath(new URL("./src/stores", import.meta.url)),
+      },
+      {
+        find: "@features",
+        replacement: fileURLToPath(new URL("./src/features", import.meta.url)),
+      },
     ],
   },
 

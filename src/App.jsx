@@ -4,6 +4,7 @@ import Header from "@components/Header/Header.jsx";
 import SectionBreak from "@components/SectionBreak/SectionBreak.jsx";
 import Footer from "@components/Footer/Footer";
 import CartItemsProvider from "@context/CartItemsContext/CartItemsProvider";
+import { create } from "zustand";
 
 function App() {
   return (
