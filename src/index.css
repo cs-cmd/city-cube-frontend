@@ -52,10 +52,19 @@ body {
   text-align: center;
 }
 
-a {
+a, .link {
   text-decoration: none;
   color: var(--header-font-color);
+  border-left: none;
+  border-top: none;
+  border-right: none;
   border-bottom: 1px solid transparent;
+  background-color: transparent;
+  font-size: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+
 
   &.header-link {
     transition:
@@ -95,7 +104,7 @@ a {
   &.call-to-action {
     border-width: 3px;
     padding: 15px;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     font-size: 2rem;
     transition: background-color var(--quick-time);
     &:hover {
@@ -106,4 +115,13 @@ a {
 
 .subscript {
   font-size: 0.75em;
+}
+
+.page-input {
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: 1.5rem;
+  border: 2px solid var(--header-font-color);
 }

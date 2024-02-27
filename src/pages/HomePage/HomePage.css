@@ -9,6 +9,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 0px;
+    width: 100%;
     .blur-container {
       display: flex;
       flex-direction: column;

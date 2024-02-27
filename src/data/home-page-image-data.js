@@ -8,7 +8,7 @@ const homePageImageContent = [
   {
     imgSrc: new URL("/images/founders/founders1.jpeg", import.meta.url).href,
     desc: "The founders, Raz Keenz and Mohammad Kapoor, in front of their first factory",
-    text: "Designed from the ground up by CS Financial's own son, Raz Keenz, alongside friend Mohammad Kapoor, built a culinary empire spanning the City.",
+    text: "Designed from the ground up by CS Financial's own son, Raz Keenz, alongside friend Mohammad Kapoor, a culinary empire was built that eventually spanned the City.",
   },
   {
     imgSrc: new URL("/images/food-images/food1.jpg", import.meta.url).href,

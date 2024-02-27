@@ -1,18 +1,17 @@
 import "./Login.css";
 import { useState } from "react";
 
-export default function Login({ userStore }) {
+export default function Login({ userStore, setPageType }) {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   function handleLoginClick() {
-    const newUser = {
-      username,
-    };
-
-    userStore.setUser(newUser);
-  }
-
-  function handleSignUpClick() {
-    return;
+    fetch('http://localhost:3000/api')
+    .then(res => res.json()) 
+    .then(json => {
+      console.log(json);
+    })
+    .catch(err => console.log(err));
   }
 
   return (
@@ -20,25 +19,26 @@ export default function Login({ userStore }) {
       <h1>Login</h1>
       <input
         type="text"
-        className=""
+        className="page-input"
         placeholder="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <div className="buttons">
-        <button 
-          type="button" 
-          onClick={handleLoginClick}
-          className="page-button">
-          Login
-        </button>
-        <button
-          type="button"
-          onClick={handleSignUpClick}
-          className='page-button secondary'>
-            Sign Up
-          </button>
-        </div>
+
+      <input
+        type='password'
+        className="page-input"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <button
+        onClick={handleLoginClick}
+        className="page-button">
+        Login
+      </button>
+      <p>Don&apos;t have an account? <button className='link reactive-link' onClick={() => setPageType()}>Sign up here!</button></p>
     </div>
   );
 }

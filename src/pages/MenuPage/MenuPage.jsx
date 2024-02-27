@@ -2,7 +2,7 @@ import menuObjects from "@data/menuObjects.js";
 import MenuItem from "@components/MenuItem/MenuItem";
 import SectionBreak from "@components/SectionBreak/SectionBreak";
 import "./MenuPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const LoadTimeline = {
   LOADING: 1,
@@ -13,22 +13,24 @@ export default function MenuPage() {
   const [menuItems, setMenuItems] = useState(null);
   const [timeline, setTimeline] = useState(LoadTimeline.LOADING);
 
-  // const menuItems = await menuObjectsts;
-  // add filter option for flavors, price, etc.
-  // const menuQueryResults = menuObjects;
-  fetch('http://localhost:3000/api/menu-items')
-    .then(res => res.json())
-    .then(json => { 
-      console.log(json);
-      setMenuItems(json.map((menuObject, index) => {
-        return (<MenuItem key={index} {...menuObject}/>);
-      }));
-      setTimeline(LoadTimeline.FOUND)
-    })
-    .catch(err => {
-      console.log(err);
-      setTimeline(LoadTimeline.ERROR);
-    });
+  useEffect(() => {
+    // const menuItems = await menuObjectsts;
+    // add filter option for flavors, price, etc.
+    // const menuQueryResults = menuObjects;
+    fetch('http://localhost:3000/api/menu-items')
+      .then(res => res.json())
+      .then(json => { 
+        console.log(json);
+        setMenuItems(json.map((menuObject, index) => {
+          return (<MenuItem key={index} {...menuObject}/>);
+        }));
+        setTimeline(LoadTimeline.FOUND)
+      })
+      .catch(err => {
+        console.log(err);
+        setTimeline(LoadTimeline.ERROR);
+      });
+  }, [])
   
   return (
     <main className="menu-page">
