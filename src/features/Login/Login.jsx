@@ -6,8 +6,13 @@ export default function Login({ userStore, setPageType }) {
   const [password, setPassword] = useState("");
 
   function handleLoginClick() {
-    fetch('http://localhost:3000/api')
-    .then(res => res.json()) 
+    fetch('http://localhost:3000/api/account/login', {
+      method: "POST",
+    })
+    .then(res => {
+      console.log(res);
+      return res;
+    }) 
     .then(json => {
       console.log(json);
     })
