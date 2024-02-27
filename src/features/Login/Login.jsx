@@ -11,18 +11,34 @@ export default function Login({ userStore }) {
     userStore.setUser(newUser);
   }
 
+  function handleSignUpClick() {
+    return;
+  }
+
   return (
-    <main>
+    <div className="account-login">
       <h1>Login</h1>
       <input
         type="text"
+        className=""
         placeholder="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button type="button" onClick={handleLoginClick}>
-        Login
-      </button>
-    </main>
+      <div className="buttons">
+        <button 
+          type="button" 
+          onClick={handleLoginClick}
+          className="page-button">
+          Login
+        </button>
+        <button
+          type="button"
+          onClick={handleSignUpClick}
+          className='page-button secondary'>
+            Sign Up
+          </button>
+        </div>
+    </div>
   );
 }

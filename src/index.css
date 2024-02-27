@@ -33,6 +33,11 @@ body {
   margin: 0px;
   padding: 0px;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
 
 .heading {
   font-size: 2rem;
